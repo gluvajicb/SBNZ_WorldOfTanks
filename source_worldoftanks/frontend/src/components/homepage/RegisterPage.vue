@@ -35,6 +35,7 @@
 #registerForm{
   opacity: 0.9;
   display: inline-block;
+  
 }
 
 </style>
