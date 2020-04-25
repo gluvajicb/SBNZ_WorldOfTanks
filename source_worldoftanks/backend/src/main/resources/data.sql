@@ -1,0 +1,1 @@
+INSERT INTO USER (id, username, password, balance, discount) VALUES (1, 'user1','123',10000,false)
