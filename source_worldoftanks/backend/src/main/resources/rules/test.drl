@@ -1,0 +1,12 @@
+package KieRule;
+import com.example.WoTRecommender.model.Tank;
+import com.example.WoTRecommender.model.Tank.TankType;
+
+
+
+rule "hello"
+ when
+    tankObject : Tank(damage == 750 && topSpeed == 25)
+ then
+    tankObject.setTankType(Tank.TankType.DESTROYER);
+ end

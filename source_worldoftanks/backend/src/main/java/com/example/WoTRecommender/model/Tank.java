@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 public class Tank {
 
-    private enum TankType{
+    public enum TankType{
         HEAVY,
         MEDIUM,
         LIGHT,
