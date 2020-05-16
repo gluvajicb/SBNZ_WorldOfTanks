@@ -26,6 +26,9 @@ public class PlayerStatistics {
         this.userTank = userTank;
     }
 
+    public PlayerStatistics() {
+    }
+
     public Long getId() {
         return id;
     }

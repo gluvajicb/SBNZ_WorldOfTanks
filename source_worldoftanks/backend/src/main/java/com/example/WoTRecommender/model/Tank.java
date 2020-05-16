@@ -43,6 +43,8 @@ public class Tank {
     @OneToMany(mappedBy = "tank")
     private List<UserTank> users;
 
+    public Tank() {
+    }
 
     public Tank(Long id, String name, TankType tankType, Integer damage, Integer penetration, Float reloadTime,
                 Float topSpeed, Integer health, Integer armor, Integer viewRange, List<UserTank> users) {

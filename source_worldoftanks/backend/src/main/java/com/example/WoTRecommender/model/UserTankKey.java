@@ -18,6 +18,10 @@ public class UserTankKey implements Serializable {
         this.tankID = tankID;
     }
 
+    public UserTankKey(){
+
+    }
+
     public Long getTankID() {
         return tankID;
     }

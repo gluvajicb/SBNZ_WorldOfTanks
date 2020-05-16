@@ -18,6 +18,9 @@ public class UserTank {
     @JoinColumn(name = "tank_id")
     private Tank tank;
 
+    public UserTank() {
+    }
+
     public UserTank(UserTankKey id, User user, Tank tank) {
         this.id = id;
         this.user = user;
