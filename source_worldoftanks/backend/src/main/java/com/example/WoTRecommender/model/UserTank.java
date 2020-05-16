@@ -11,12 +11,15 @@ public class UserTank {
     @ManyToOne
     @MapsId("user_id")
     @JoinColumn(name = "user_id")
-    User user;
+    private User user;
 
     @ManyToOne
     @MapsId("tank_id")
     @JoinColumn(name = "tank_id")
-    Tank tank;
+    private Tank tank;
+
+    public UserTank() {
+    }
 
     public UserTank(UserTankKey id, User user, Tank tank) {
         this.id = id;
