@@ -8,36 +8,38 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name="TANK")
 public class Tank {
-
-    public enum TankType{
-        HEAVY,
-        MEDIUM,
-        LIGHT,
-        DESTROYER,
-        SPG
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name="name")
     private String name;
 
+    @Enumerated(EnumType.STRING)
     private TankType tankType;
 
+    @Column(name="damage")
     private Integer damage;
 
+    @Column(name="penetration")
     private Integer penetration ;
 
-    private Float reloadTime;
+    @Column(name="reload_time")
+    private Integer reloadTime;
 
-    private Float topSpeed;
+    @Column(name="top_speed")
+    private Integer topSpeed;
 
+    @Column(name="health", length=50, nullable=false, unique=false)
     private Integer health;
 
+    @Column(name="armor", length=50, nullable=false, unique=false)
     private Integer armor;
 
+    @Column(name="view_range", length=50, nullable=false, unique=false)
     private Integer viewRange;
 
     @OneToMany(mappedBy = "tank")
@@ -46,8 +48,8 @@ public class Tank {
     public Tank() {
     }
 
-    public Tank(Long id, String name, TankType tankType, Integer damage, Integer penetration, Float reloadTime,
-                Float topSpeed, Integer health, Integer armor, Integer viewRange, List<UserTank> users) {
+    public Tank(Long id, String name, TankType tankType, Integer damage, Integer penetration, Integer reloadTime,
+                Integer topSpeed, Integer health, Integer armor, Integer viewRange, List<UserTank> users) {
         this.id = id;
         this.name = name;
         this.tankType = tankType;
@@ -101,19 +103,19 @@ public class Tank {
         this.penetration = penetration;
     }
 
-    public Float getReloadTime() {
+    public Integer getReloadTime() {
         return reloadTime;
     }
 
-    public void setReloadTime(Float reloadTime) {
+    public void setReloadTime(Integer reloadTime) {
         this.reloadTime = reloadTime;
     }
 
-    public Float getTopSpeed() {
+    public Integer getTopSpeed() {
         return topSpeed;
     }
 
-    public void setTopSpeed(Float topSpeed) {
+    public void setTopSpeed(Integer topSpeed) {
         this.topSpeed = topSpeed;
     }
 

@@ -1,0 +1,140 @@
+package rules;
+
+import com.example.WoTRecommender.model.UserAnswer;
+
+// Are you a new player without experience
+rule "Answer NO on Question Are you a new player without experience"
+    when
+        ans : UserAnswer(frontend_question == "Are you a new player without experience", frontend_answer == "NO")
+    then
+        modify(ans){setBackend_question("Is mobility important for you")}
+end
+
+
+// Are you a new player without experience
+rule "Answer YES on Question Are you a new player without experience"
+    when
+        ans : UserAnswer(frontend_question == "Are you a new player without experience", frontend_answer == "YES")
+    then
+        ans.setRecommendedTank("For newcomers, best choice is to play russian IS-7 heavy line.");
+end
+
+
+// Is mobility important to you
+rule "Answer NO on Question Is mobility important to you"
+    when
+        ans : UserAnswer(frontend_question == "Is mobility important to you", frontend_answer == "NO")
+    then
+        ans.setBackend_question("Do you prefer face to face combat or sniping");
+end
+
+// Is mobility important to you
+rule "Answer YES on Question Is mobility important to you"
+    when
+        ans : UserAnswer(frontend_question == "Is mobility important to you", frontend_answer == "YES")
+    then
+        ans.setBackend_question("Scout or striker");
+end
+
+// Scout or striker
+rule "Answer SCOUT on Question Scout or striker"
+    when
+        ans : UserAnswer(frontend_question == "Scout or striker", frontend_answer == "SCOUT")
+    then
+        ans.setBackend_question("Wheeles or tracks");
+end
+
+
+// Scout or striker
+rule "Answer STRIKER on Question Scout or striker"
+    when
+        ans : UserAnswer(frontend_question == "Scout or striker", frontend_answer == "STRIKER")
+    then
+        ans.setBackend_question("Great DPM but harder to play or less DPM and easier to play");
+end
+
+
+// Wheeles or tracks
+rule "Answer WHEELES on Question Wheeles or tracks"
+    when
+        ans : UserAnswer(frontend_question == "Wheeles or tracks", frontend_answer == "WHEELES")
+    then
+        ans.setRecommendedTank("EBR");
+end
+
+// Wheeles or tracks
+rule "Answer TRACKS on Question Wheeles or tracks"
+    when
+        ans : UserAnswer(frontend_question == "Wheeles or tracks", frontend_answer == "TRACKS")
+    then
+        ans.setRecommendedTank("LT432");
+end
+
+// Great DPM but harder to play or less DPM and easier to play
+rule "Answer GREAT_DPM on Question Great DPM but harder to play or less DPM and easier to play"
+    when
+        ans : UserAnswer(frontend_question == "Great DPM but harder to play or less DPM and easier to play", frontend_answer == "GREAT_DPM")
+    then
+        ans.setRecommendedTank("PROGETTO");
+end
+
+
+// Great DPM but harder to play or less DPM and easier to play
+rule "Answer LESS_DPM on Question Great DPM but harder to play or less DPM and easier to play"
+    when
+        ans : UserAnswer(frontend_question == "Great DPM but harder to play or less DPM and easier to play", frontend_answer == "LESS_DPM")
+    then
+        ans.setRecommendedTank("OBJ 430U");
+end
+
+// Do you prefer face to face combat or sniping
+rule "Answer FACETOFACE on Question Do you prefer face to face combat or sniping"
+    when
+        ans : UserAnswer(frontend_question == "Do you prefer face to face combat or sniping", frontend_answer == "FACETOFACE")
+    then
+        ans.setBackend_question("Beast armor but slow or less armor but a bit faster");
+end
+
+
+// Do you prefer face to face combat or sniping
+rule "Answer SNIPING on Question Do you prefer face to face combat or sniping"
+    when
+        ans : UserAnswer(frontend_question == "Do you prefer face to face combat or sniping", frontend_answer == "SNIPING")
+    then
+        ans.setBackend_question("Tank with touret or without");
+end
+
+//Beast armor but slow or less armor but a bit faster
+rule "Answer BEAST_ARMOR on Question Beast armor but slow or less armor but a bit faster"
+    when
+        ans : UserAnswer(frontend_question == "Beast armor but slow or less armor but a bit faster", frontend_answer == "BEAST_ARMOR")
+    then
+        ans.setRecommendedTank("MAUS");
+end
+
+// Beast armor but slow or less armor but a bit faster
+rule "Answer LESS_ARMOR on Question Beast armor but slow or less armor but a bit faster"
+    when
+        ans : UserAnswer(frontend_question == "Beast armor but slow or less armor but a bit faster", frontend_answer == "LESS_ARMOR")
+    then
+        ans.setRecommendedTank("OBJECT 277");
+end
+
+// Tank with touret or without
+rule "Answer WITH on Question Tank with touret or without"
+    when
+        ans : UserAnswer(frontend_question == "Tank with touret or without", frontend_answer == "WITH")
+    then
+        ans.setRecommendedTank("SKORPION G");
+end
+
+// Tank with touret or without
+rule "Answer WITHOUT on Question Tank with touret or without"
+    when
+        ans : UserAnswer(frontend_question == "Tank with touret or without", frontend_answer == "WITHOUT")
+    then
+        ans.setRecommendedTank("OBJ 704");
+end
+
+
+

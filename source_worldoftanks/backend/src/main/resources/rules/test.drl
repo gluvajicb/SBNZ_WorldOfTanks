@@ -1,12 +1,12 @@
 package KieRule;
-import com.example.WoTRecommender.model.Tank;
-import com.example.WoTRecommender.model.Tank.TankType;
-
+import com.example.WoTRecommender.model.Tank
+import com.example.WoTRecommender.model.TankType;
+import com.example.WoTRecommender.model.UserAnswer;
 
 
 rule "changes tank type if condition is fulfilled"
  when
-    tankObject : Tank(damage == 750 && topSpeed == 25)
+    tankObject : Tank(damage == 750)
  then
-    tankObject.setTankType(Tank.TankType.DESTROYER);
+    tankObject.setTankType(TankType.DESTROYER);
  end

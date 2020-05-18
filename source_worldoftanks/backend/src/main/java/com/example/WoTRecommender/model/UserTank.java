@@ -3,6 +3,7 @@ package com.example.WoTRecommender.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name="USER_TANK")
 public class UserTank {
 
     @EmbeddedId

@@ -3,16 +3,20 @@ package com.example.WoTRecommender.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name="PLAYER_STATISTICS")
 public class PlayerStatistics {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name="avg_damage")
     private Integer avgDamage;
 
+    @Column(name="win_rate")
     private Integer winRate;
 
+    @Column(name="gun_mark")
     private boolean gunMark; //means that player is better than 65% players in current tank
 
     @OneToOne
