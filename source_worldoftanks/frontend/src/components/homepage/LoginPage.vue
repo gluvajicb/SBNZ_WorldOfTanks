@@ -1,5 +1,6 @@
 <template>
-    <b-card-group>
+    <div id="loginForm">
+        <b-card-group>
         <b-card border-variant="light" style="max-width: 24rem;" class="mb-2 mx-auto">
             <b-form-group
                 label-for="input-username"
@@ -17,6 +18,7 @@
             <b-alert variant="danger" v-model="error" dismissible>{{this.errorMessage}}</b-alert>
         </b-card>
     </b-card-group>
+    </div>
 </template>
 
 <script>
@@ -60,3 +62,12 @@ export default {
 }
 </script>
 
+<style scoped>
+
+#loginForm{
+  opacity: 0.9;
+  display: inline-block;
+  
+}
+
+</style>

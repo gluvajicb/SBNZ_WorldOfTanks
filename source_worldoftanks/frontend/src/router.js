@@ -3,7 +3,6 @@ import Router from 'vue-router'
 
 
 import LoginPage from '@/components/homepage/LoginPage'
-import RegisterPage from '@/components/homepage/RegisterPage'
 import RegisteredUserHomePage from '@/components/registered_user/RegisteredUserHomePage'
 import PlaystylePage from '@/components/registered_user/PlaystylePage'
 
@@ -16,10 +15,6 @@ export default new Router({
         {
             path: '/',
             component: LoginPage
-        },
-        {
-            path: '/register',
-            component: RegisterPage
         },
         {
             path: '/homepage',

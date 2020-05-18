@@ -7,7 +7,7 @@ rule "Answer NO on Question Are you a new player without experience"
     when
         ans : UserAnswer(frontend_question == "Are you a new player without experience", frontend_answer == "NO")
     then
-        modify(ans){setBackend_question("Is mobility important for you")}
+        ans.setBackend_question("Is mobility important for you");
 end
 
 
